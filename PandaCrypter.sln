@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandaCrypter", "PandaCrypter.csproj", "{a6d769b6-c436-48f4-8e23-dd88800dd0f0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{a6d769b6-c436-48f4-8e23-dd88800dd0f0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a6d769b6-c436-48f4-8e23-dd88800dd0f0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a6d769b6-c436-48f4-8e23-dd88800dd0f0}.Debug|x64.ActiveCfg = Debug|x64
+		{a6d769b6-c436-48f4-8e23-dd88800dd0f0}.Debug|x64.Build.0 = Debug|x64
+		{a6d769b6-c436-48f4-8e23-dd88800dd0f0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{a6d769b6-c436-48f4-8e23-dd88800dd0f0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{a6d769b6-c436-48f4-8e23-dd88800dd0f0}.Release|x64.ActiveCfg = Release|x64
+		{a6d769b6-c436-48f4-8e23-dd88800dd0f0}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E8C3C99-16C6-4A02-BC41-11F3BEF12556}
+	EndGlobalSection
+EndGlobal

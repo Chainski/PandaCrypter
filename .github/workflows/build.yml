@@ -1,0 +1,66 @@
+name: Build PandaCrypter
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  repository-projects: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build PandaCrypter
+        run: msbuild PandaCrypter.csproj /p:Configuration=Release /p:Platform=x64 /p:AllowUnsafeBlocks=true /p:Optimize=true /p:DebugType=none
+        working-directory: .
+
+      - name: List Build Directory
+        shell: pwsh
+        run: |
+          Write-Host "Listing contents of output directory"
+          Get-ChildItem -Recurse bin\x64\Release
+
+      - name: Delete tag and release
+        uses: dev-drprasad/delete-tag-and-release@v1.1
+        with:
+          tag_name: PandaCrypter
+          delete_release: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: PandaCrypter
+          release_name: PandaCrypter
+          body: "Release created by GitHub Actions"
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset-pandacrypter
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: bin\x64\Release\PandaCrypter.exe
+          asset_name: PandaCrypter.exe
+          asset_content_type: application/octet-stream
