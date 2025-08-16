@@ -14,6 +14,7 @@
 # PandaCrypter
 PandaCrypter is a C#-based tool designed to convert PowerShell scripts into obfuscated batch files (.bat) with encryption and additional features for execution control. 
 
+
 # Features
 - [x] AES Encryption: Encrypts the PowerShell payload.
 - [x] Anti-VM: Optionally evades virtualized environments.
